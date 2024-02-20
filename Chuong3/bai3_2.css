@@ -1,0 +1,20 @@
+.title {
+    color: red;
+    text-align: center;
+}
+
+.ph1 {
+    font-size: 14px;
+    font-style: italic;
+    color: white;
+    background-color: blue;
+    margin: 0;
+}
+
+.ph2 {
+    font-size: 14px;
+    font-style: italic;
+    color: yellow;
+    background-color: brown;
+    margin: 0;
+}

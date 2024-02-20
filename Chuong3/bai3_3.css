@@ -1,0 +1,14 @@
+.background {
+    border: 4px black solid;
+    background-color: pink;
+}
+
+.title {
+    text-align: center;
+    color: blue;
+}
+
+.list {
+    font-size: 14px;
+    color: black;
+}
