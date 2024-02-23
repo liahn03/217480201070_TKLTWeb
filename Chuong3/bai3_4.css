@@ -1,0 +1,13 @@
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    background-color: rgb(65, 175, 65);
+}
+
+.row-header {
+    background-color: green;
+}
