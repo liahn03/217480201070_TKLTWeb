@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var SoLuong, table
+        var DS = new Array(100)
+        SoLuong = prompt("Bạn cần nhập bao nhiêu thiết bị: ", 1)
+        for(i = 0; i < SoLuong; i++) {
+            DS[i] = prompt("Nhập vào tên thiết bị: ", "")
+        }
+        table = "<table><tr><th>Tên thiết bị</th>"
+        for(tb in DS) {
+            if(DS[tb].toLowerCase() == "computer") {
+                table += "<tr><td>" + DS[tb] + "</td></tr>"
+            }
+        }
+        table += "</table>"
+        document.write(table)
+    </script>
+</body>
+</html>

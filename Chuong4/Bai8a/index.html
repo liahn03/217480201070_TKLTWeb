@@ -1,11 +1,30 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mở trang web bằng hàm open của đối tượng window.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
+
 <body>
-    
+    <script lang="JavaScript">
+        var LuaChon = parseInt(prompt("Bạn hãy nhập vào một số để mở trang web: ", 1));
+        switch (LuaChon) {
+            case 1:
+                window.open("http://blu.edu.vn");
+                break;
+            case 2:
+                window.open("http://ctu.edu.vn");
+                break;
+            case 3:
+                window.open("https://vndoc.vn");
+                break;
+            default:
+                window.open("https://meta.vn");
+        }
+    </script>    
 </body>
+
 </html>
