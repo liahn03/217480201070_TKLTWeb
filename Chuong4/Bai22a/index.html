@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="display" style="margin-bottom: 8px; width: 150px;">
+        <br>
+        <div>
+            <button class="btn" value="0">0</button>
+            <button class="btn" value="1">1</button>
+            <button class="btn" value="2">2</button>
+            <button class="btn" value="3">3</button>
+            <button class="btn" value="4">4</button>
+        </div>
+        <br>
+        <div>
+            <button class="btn" value="5">5</button>
+            <button class="btn" value="6">6</button>
+            <button class="btn" value="7">7</button>
+            <button class="btn" value="8">8</button>
+            <button class="btn" value="9">9</button>
+        </div>
+        <br>
+        <div>
+            <button class="btn" value="+">+</button>
+            <button class="btn" value="-">-</button>
+            <button class="btn" value="*">*</button>
+            <button class="btn" value="/">/</button>
+            <button class="btn" value="=">=</button>
+        </div>
+        <br>
+        <div>
+            <button class="btn" value="C">C</button>
+        </div>
+    </div>
+
+    <script>
+        var num1 = ''
+        var num2 = ''
+        var operation = ''
+
+        var btnList = document.getElementsByClassName('btn')
+        for (i = 0; i < btnList.length; i++) {
+            btnList[i].onclick = function (e) {
+                var s = e.target.value
+                if(Number.isInteger(parseInt(s))) {
+                    if(operation == '') {
+                        if(num1 == '') {
+                            display.value = ''
+                        }
+                        num1 += s
+                    } else {
+                        num2 += s
+                    }
+                } else if(s == '+') {
+                    operation = '+'
+                } else if(s == '-') {
+                    operation = '-'
+                } else if(s == '*') {
+                    operation = '*'
+                } else if(s == '/') {
+                    operation = '/'
+                } else if(s == '=') {
+                    switch(operation) {
+                        case '+':
+                            display.value = parseInt(num1) + parseInt(num2)
+                            break
+                        case '-':
+                            display.value = parseInt(num1) - parseInt(num2)
+                            break
+                        case '*':
+                            display.value = parseInt(num1) * parseInt(num2)
+                            break
+                        case '/':
+                            if(num2 != 0)
+                                display.value = parseInt(num1) / parseInt(num2)
+                            else
+                                display.value = 'error'
+                            break
+                    }
+                    num1 = ''
+                    num2 = ''
+                    operation = ''
+                    return
+                } else if(s == 'C') {
+                    num1 = ''
+                    num2 = ''
+                    operation = ''
+                    display.value = ''
+                    return
+                }
+                if(display.value == '' && s == '0')
+                    display.value = ''
+                else
+                    display.value += s
+            }
+        }
+    </script>
+</body>
+
+</html>

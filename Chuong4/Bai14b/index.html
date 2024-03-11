@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="SoHang1" placeholder="Số hạng 1">
+    <input type="text" name="" id="SoHang2" placeholder="Số hạng 2">
+    <input type="text" name="" id="KetQua" placeholder="Kết quả">
+    <br> <br>
+
+    <input type="radio" name="Tinh" onclick="Tinh('cong')"> <label>Cộng</label> <br>
+    <input type="radio" name="Tinh" onclick="Tinh('tru')"> <label>Trừ</label> <br>
+    <input type="radio" name="Tinh" onclick="Tinh('nhan')"> <label>Nhân</label> <br>
+    <input type="radio" name="Tinh" onclick="Tinh('chia')"> <label>Chia</label> <br>
+
+    <script>
+        function Tinh(pheptoan) {
+            var a = parseFloat(SoHang1.value)
+            var b = parseFloat(SoHang2.value)
+            if(pheptoan == "cong")
+                KetQua.value = a + b
+            else if(pheptoan == "tru")
+                KetQua.value = a - b
+            else if(pheptoan == "nhan")
+                KetQua.value = a * b
+            else if(pheptoan == "chia") {
+                if(b == 0)
+                    alert("Không thể chia cho 0")
+                else
+                    KetQua.value = a / b
+            }
+        }
+    </script>
+</body>
+</html>

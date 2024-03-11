@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Họ tên</td>
+            <td><input type="text" id="HoTen"></td>
+        </tr>
+        <tr>
+            <td>Năm vào làm</td>
+            <td><input type="text" id="NamVaoLam" onkeyup="Tinh()"></td>
+        </tr>
+        <tr>
+            <td>Hệ số</td>
+            <td><input type="text" id="HeSo" onkeyup="Tinh()"></td>
+        </tr>
+        <tr>
+            <td>Lương cơ sở</td>
+            <td><input type="text" id="LuongCoSo" onkeyup="Tinh()"></td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td>Lương cơ bản</td>
+            <td><input type="text" id="LuongCoBan"></td>
+        </tr>
+        <tr>
+            <td>Phụ cấp</td>
+            <td><input type="text" id="PhuCap"></td>
+        </tr>
+        <tr>
+            <td>Thâm niên</td>
+            <td><input type="text" id="ThamNien"></td>
+        </tr>
+        <tr>
+            <td>Thành tiền</td>
+            <td><input type="text" id="ThanhTien"></td>
+        </tr>
+    </table>
+
+    <script>
+        function Tinh() {
+            if(HeSo.value != "" && LuongCoSo.value != "" && NamVaoLam.value != "") {
+                LuongCoBan.value = HeSo.value * LuongCoSo.value
+                PhuCap.value = 0.25 * LuongCoBan.value
+                ThamNien.value = (new Date()).getFullYear() - NamVaoLam.value
+                ThanhTien.value = parseFloat(LuongCoBan.value) + parseFloat(PhuCap.value)
+            }
+        }
+    </script>
+</body>
+</html>
